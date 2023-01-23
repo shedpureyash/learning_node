@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port=4000
 app.get('/',(req,res)=>{
-    res.send("welcome to home page")
+    res.send("<h1>welcome to home page</h1>")
 })
 app.get('/about',(req,res)=>{
     res.write("<h1>welcome to about page</h1>")
@@ -11,8 +11,9 @@ app.get('/about',(req,res)=>{
 })
 //sending json data
 app.get('/contact',(req,res)=>{
-    res.send([{
-        id:1,
+    //res.json() also
+    res.send([
+        {id:1,
         name:"jai hanuman"},
         {id:2,
         name:"jai shree ram"}
