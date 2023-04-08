@@ -1,0 +1,21 @@
+SQL            No SQL
+Table          Collection
+Row/Record     document
+
+show dbs -> show batabase
+use databasename -> create or open database if already exists
+db.collectionname.insertOne({name:"reactjs", type:"Front end", videos:80, active:true})
+      ->Add document in collection
+db -> show active database
+show collections -> show collection in database
+db.collectionname.find() ->show all document in collection
+db.collectionname.find().pretty() ->format the data
+db.collectionname.insertMany([{},{},{}])
+
+db.collection.find(query,projection) -> show documents, query(x<5), projrction is optional
+db.collectionname.find({name:"mongodb"}).pretty() ->show document with name mongodb
+db.collectionname.find({name:"mongodb"},{name:1}).pretty() ->show document containing only name and _id
+db.collectionname.find({name:"mongodb"},{_id:0,name:1}).pretty() ->show document containing only name
+db.collectionname.find({name:"mongodb"},{name:1}).pretty().limit(1) 
+db.collectionname.findOne({name:"mongodb"},{name:1})
+db.collectionname.find({name:"mongodb"},{name:1}).pretty().limit(1).skip(1)
