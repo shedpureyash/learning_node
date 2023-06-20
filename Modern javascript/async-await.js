@@ -19,7 +19,7 @@ function createdata(newdata){
         setTimeout(()=>{
             datas.push(newdata);
             let error=false;
-            if(!error){
+            if(error){
                 resolve(["sab kuch sahi hai","ha bilkul shai hai"]);
             }
             else{
@@ -32,8 +32,12 @@ function createdata(newdata){
 //createdata({name:"Ram",profession:"SDE"}).then(getdatas).catch((err)=>{console.log(err)});
 
 async function start(){
-    await createdata({name:"Ram",profession:"SDE"}).then(getdatas).catch((err)=>{console.log(err)});
-    
-    
+    // await createdata({name:"Ram",profession:"SDE"}).then(getdatas).catch((err)=>{console.log(err)});
+    //await createdata({name:"Ram",profession:"SDE"}).then(getdatas).catch((err)=>{console.log(err)});
+    const val = await createdata({name:"Ram",profession:"SDE"})
+    console.log(val)
+    // console.log(typeof(testvar))
 }
-start()
+let hd= start()
+console.log("hey there its a " + hd)
+

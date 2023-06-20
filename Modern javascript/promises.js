@@ -14,9 +14,22 @@ function getdatas(msg){
     console.log(msg[1]);
 }
 //change the value of error to see different output
+// function createdata(newdata){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             datas.push(newdata);
+//             let error=false;
+//             if(!error){
+//                 resolve(["sab kuch sahi hai","ha bilkul shai hai"]);
+//             }
+//             else{
+//                 reject("kuch sahi nahi hai");
+//             }
+//         },2000);
+//     })
+// }
 function createdata(newdata){
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
+    return new Promise((resolve,reject)=>{        
             datas.push(newdata);
             let error=false;
             if(!error){
@@ -25,7 +38,6 @@ function createdata(newdata){
             else{
                 reject("kuch sahi nahi hai");
             }
-        },2000);
     })
 }
 //getdatas is called during resolve(only one argument) and is defined in next line

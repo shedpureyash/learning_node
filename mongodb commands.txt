@@ -2,6 +2,7 @@ SQL            No SQL
 Table          Collection
 Row/Record     document
 
+//insert or create query
 show dbs -> show batabase
 use databasename -> create or open database if already exists
 db.collectionname.insertOne({name:"reactjs", type:"Front end", videos:80, active:true})
@@ -12,6 +13,7 @@ db.collectionname.find() ->show all document in collection
 db.collectionname.find().pretty() ->format the data
 db.collectionname.insertMany([{},{},{}])
 
+//read query
 db.collection.find(query,projection) -> show documents, query(x<5), projrction is optional
 db.collectionname.find({name:"mongodb"}).pretty() ->show document with name mongodb
 db.collectionname.find({name:"mongodb"},{name:1}).pretty() ->show document containing only name and _id
@@ -19,3 +21,17 @@ db.collectionname.find({name:"mongodb"},{_id:0,name:1}).pretty() ->show document
 db.collectionname.find({name:"mongodb"},{name:1}).pretty().limit(1) 
 db.collectionname.findOne({name:"mongodb"},{name:1})
 db.collectionname.find({name:"mongodb"},{name:1}).pretty().limit(1).skip(1)
+
+//update query
+updateone-> db.collectionnameOne(<filter>,<update>) -> update first document out of many whose filter condition are atching
+updatemany-> db.collectioname.updateMany(<filter>,<update>)
+db.collectioname.updateOne({name:"Javascript"},{$set:{type:"Full Stack"}})
+db.collectionname.updateMany({name:"Front end"},{$set:{active:false}})
+
+//delete query
+deleteMany -> db.collectionname.deleteMany(deletion_criteria)
+show dbs
+use dbname
+show collections
+db.collectionname.deleteMany({type:"Full Stack"})
+db.coolection.deleteMany()-> deletes all documents in collection
